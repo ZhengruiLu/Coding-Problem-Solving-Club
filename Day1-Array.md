@@ -1,6 +1,8 @@
 # Key Words in Foundation
 An array is a container object that holds a **fixed number** of values of a single type.
 
+[Array](Pictures/Arrays-1.png)
+
 Because array stores elements in contiguous memory locations, so:
 
 - faster access to an element at a specific index
