@@ -1,13 +1,21 @@
 public class Main {
     public static void main(String[] args) {
 //        removeLinkedListEle
-        ListNode l1 = new ListNode(1, new ListNode(2, new ListNode(6, new ListNode(3))));
-        int val = 6;
-        printLinkedList(removeLinkedListEle(l1, val));
+//        ListNode l1 = new ListNode(1, new ListNode(2, new ListNode(6, new ListNode(3))));
+//        int val = 6;
+//        printLinkedList(removeLinkedListEle(l1, val));
+//
+//        ListNode l2 = new ListNode(6, new ListNode(6, new ListNode(6, new ListNode(6))));
+//        printLinkedList(removeLinkedListEle(l2, val));
 
-        ListNode l2 = new ListNode(6, new ListNode(6, new ListNode(6, new ListNode(6))));
-        printLinkedList(removeLinkedListEle(l2, val));
-
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.addAtHead(1);
+        myLinkedList.addAtTail(3);
+        myLinkedList.addAtIndex(1, 2);
+        System.out.println(myLinkedList.get(1));
+        myLinkedList.deleteAtIndex(1);
+        printLinkedList(myLinkedList.getHead());
+        System.out.println(myLinkedList.get(1));
     }
 //helper: print data structures
     private static void printLinkedList(ListNode head) {
@@ -19,9 +27,11 @@ public class Main {
         }
 
         while (curr != null) {
-            System.out.println(curr.val + "->");
+            System.out.print(curr.val + "->");
             curr = curr.next;
         }
+
+        System.out.println();
     }
 
 //    203.Remove Linked List Elements
@@ -60,6 +70,7 @@ public class Main {
         return dummy.next;
     }
 
+// 707. Design Linked List
 
 }
 
