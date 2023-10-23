@@ -1,5 +1,5 @@
 # Key Words in Foundation
-Two Pointers(slow fast pointer), 
+two pointers - pre and curr
 
 # Problem List
 ## 203. Remove Linked List Elements
@@ -9,11 +9,14 @@ Two Pointers(slow fast pointer),
 ## 707. Design Linked List
 - https://leetcode.com/problems/design-linked-list/description/
 - Fully understand: 1.the class of singly linked list; 2.operations.
-<!--  -->
-## 59. Spiral Matrix II
-- https://leetcode.com/problems/spiral-matrix-ii/description/
-- Simulation: 1.control loop range < n / 2; 2.fill in center val if n is odd.
+
+## 206. Reverse Linked List
+- https://leetcode.com/problems/reverse-linked-list/description/
+- two pointers: pre, curr, follow. 
+- 1. Use follow = curr.next, to record the next ele of curr. 
+- 2. Use curr.next = pre change direction.
+- 3. Move pre, curr to move forward, until curr = null.
 
 # Resources
-- Sliding Window
-https://www.geeksforgeeks.org/window-sliding-technique/
+- Introduction to Singly Linked List
+  https://www.geeksforgeeks.org/data-structures/linked-list/singly-linked-list/

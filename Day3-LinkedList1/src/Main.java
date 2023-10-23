@@ -1,21 +1,23 @@
 public class Main {
     public static void main(String[] args) {
 //        removeLinkedListEle
-//        ListNode l1 = new ListNode(1, new ListNode(2, new ListNode(6, new ListNode(3))));
+        ListNode l1 = new ListNode(1, new ListNode(2, new ListNode(6, new ListNode(3))));
+        ListNode reverseL1 = reverseList(l1);
+        printLinkedList(reverseL1);
 //        int val = 6;
 //        printLinkedList(removeLinkedListEle(l1, val));
 //
 //        ListNode l2 = new ListNode(6, new ListNode(6, new ListNode(6, new ListNode(6))));
 //        printLinkedList(removeLinkedListEle(l2, val));
 
-        MyLinkedList myLinkedList = new MyLinkedList();
-        myLinkedList.addAtHead(1);
-        myLinkedList.addAtTail(3);
-        myLinkedList.addAtIndex(1, 2);
-        System.out.println(myLinkedList.get(1));
-        myLinkedList.deleteAtIndex(1);
-        printLinkedList(myLinkedList.getHead());
-        System.out.println(myLinkedList.get(1));
+//        MyLinkedList myLinkedList = new MyLinkedList();
+//        myLinkedList.addAtHead(1);
+//        myLinkedList.addAtTail(3);
+//        myLinkedList.addAtIndex(1, 2);
+//        System.out.println(myLinkedList.get(1));
+//        myLinkedList.deleteAtIndex(1);
+//        printLinkedList(myLinkedList.getHead());
+//        System.out.println(myLinkedList.get(1));
     }
 //helper: print data structures
     private static void printLinkedList(ListNode head) {
@@ -70,7 +72,25 @@ public class Main {
         return dummy.next;
     }
 
-// 707. Design Linked List
+    //206. Reverse Linked List
+    private static ListNode reverseList(ListNode head) {
+        //edge
+        if (head == null) return null;
 
+        ListNode dummy = new ListNode(-1, head);
+        ListNode pre = null, curr = head, follow = null;
+
+        while (curr != null) {
+            //record the curr.next;
+            follow = curr.next;
+            //change curr dire
+            curr.next = pre;
+            //move forward
+            pre = curr;
+            curr = follow;
+        }
+
+        return pre;
+    }
 }
 
